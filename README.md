@@ -1,10 +1,11 @@
-# How to build a EFI for Intel Kaby Lake desktop CPUs
+# Hackintosh guide for Intel Kaby Lake desktop CPUs
 
 This is a guide for anyone want to install macOS on non-Apple hardware. This guide is based on [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/).
 
-- [EFI](https://github.com/Pangorin/EFI-Hackintosh/tree/main/EFI): Copy this into the USB boot drive
+- [EFI](https://github.com/Pangorin/EFI-Hackintosh/tree/main/EFI): Copy this into the USB boot drive (You should not copy my EFI for your build, unless you have the same specs as my build. My EFI is just a reference for other builds!)
 
-![Image spec])
+
+![Image spec](https://user-images.githubusercontent.com/68218885/136784825-3b5b0e4c-83e0-4d81-b859-46cbb5d254fd.png)
 
 ## About my build
   - CPU: Intel Core i3-7100
@@ -51,6 +52,18 @@ The drivers, kexts, and SSDTs I used are as follows:
 
 Follow the OpenCore Install Guide to [setup the config.plist](https://dortania.github.io/OpenCore-Install-Guide/config.plist/) and [configure for Intel Kaby Lake Desktop](https://dortania.github.io/OpenCore-Install-Guide/config.plist/kaby-lake.html#starting-point).
 
+> Note: If you have an unsupported GPU, you must patch the iGPU in order to have signal when booting into macOS, and make sure that you have to disable the unsupported GPU by SSDT or -wegnoegpu boot-args
+> - About the iGPU patching, if you have issue when booting into macOS Installer like black screen, no signal after verbose, make sure you add the `igfxonln=1` in the boot-args and REMEMBER, macOS DOESN'T SUPPORT VGA PORT!
+> - If you have no HDMI audio, please find the `layout-id` that fits your build. [AppleALC Supported Codecs](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs).
+
+
+| SMBIOS     | Description   |
+| ---------- | --------------|
+| `iMac18,1` | Used for computers utilizing the iGPU for displaying |
+| `iMac18,3` | Used for computers using a dGPU for displaying, and an iGPU for computing tasks only |
+
+Make sure you choose the right SMBIOS for your build, otherwise it can't be booting up with signal!
+
 ## BIOS Setting (version P8.00)
 - Disable
   * Fast Boot
@@ -69,5 +82,3 @@ Follow the OpenCore Install Guide to [setup the config.plist](https://dortania.g
   * SATA Mode: AHCI
 
 (We can leave any setting that we cannot found)
-
-About the iGPU patching, if you have issue when booting into macOS Installer like black screen, no signal after verbose, make sure you add the igfxonln=1 in the boot-args and REMEMBER, macOS DOESN'T SUPPORT VGA PORT!
