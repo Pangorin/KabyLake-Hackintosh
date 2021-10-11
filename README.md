@@ -67,3 +67,5 @@ Follow the OpenCore Install Guide to [setup the config.plist](https://dortania.g
   * SATA Mode: AHCI
 
 (We can leave any setting that we cannot found)
+
+About the iGPU patching, if you have issue when booting into macOS Installer like black screen, no signal after verbose, make sure you add the igfxonln=1 in the boot-args and REMEMBER, macOS DOESN'T SUPPORT VGA PORT!
