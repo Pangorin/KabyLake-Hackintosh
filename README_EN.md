@@ -56,7 +56,8 @@ Follow the OpenCore Install Guide to [setup the config.plist](https://dortania.g
 
 > Note: If you have an unsupported GPU, you must patch the iGPU in order to have signal when booting into macOS, and make sure that you have to disable the unsupported GPU by SSDT or -wegnoegpu boot-args
 > - About the iGPU patching, if you have issue when booting into macOS Installer like black screen, no monitor signal after verbose, make sure you add the `igfxonln=1` in the boot-args and REMEMBER, macOS DOESN'T SUPPORT VGA PORT!
-> - If you have no HDMI audio, please find the `layout-id` that fits your build. Where to find my `layout-id`? [AppleALC Supported Codecs](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs).
+> - If you have no HDMI audio, please find the `layout-id` that fits your build. 
+> - Where to find my `layout-id`? [AppleALC Supported Codecs](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs).
 
 
 | SMBIOS     | Description   |
