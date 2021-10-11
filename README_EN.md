@@ -18,6 +18,7 @@ This is a guide for anyone want to install macOS on non-Apple hardware. This gui
 
 As noted above, if you want to use my EFI, you just care about the mainboard and the video card. If those 2 things match my build, you can use my EFI!
 
+- If you want to use a graphics card (or check that if your graphics card will be supported on macOS), read this. [GPU Buyers Guide](https://dortania.github.io/GPU-Buyers-Guide/)
 ## Installation
 
 How to make the USB boot drive:
