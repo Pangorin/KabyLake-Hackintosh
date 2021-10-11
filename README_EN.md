@@ -16,11 +16,13 @@ This is a guide for anyone want to install macOS on non-Apple hardware. This gui
   - Video card: Intel HD 630 (aka the iGPU)
   - Power Supply: Cooler Master Elite V3 PC400 400W
 
+As noted above, if you want to use my EFI, you just care about the mainboard and the video card. If those 2 things match my build, you can use my EFI!
+
 ## Installation
 
 How to make the USB boot drive:
   - Windows: [click here](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html)
-  - macOS: [click here](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html) (this guide is mainly using for hackintosh the Mac which can't run the new macOS)
+  - macOS: [click here](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html) (this guide is mainly using for hackintosh the Mac which can't run the new macOS. Though, you can still using this method to make a boot drive for desktop build)
   - Linux: [click here](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
 
 Prepare the base OpenCore system: [click here](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/opencore-efi.html).
@@ -40,7 +42,7 @@ The drivers, kexts, and SSDTs I used are as follows:
       * SMCSuperIO.kext
     * USBInjectAll.kext
     * RealtekRTL8111.kext
-    * XHCI-unsupported.kext
+    * XHCI-unsupported.kext (only ASRock mainboard and specific mainboard need this kext, please read the guide to see if your mainboard need that)
     * USBMap.kext (IF YOU HAVEN'T MAP YOUR USB, DON'T USE THIS KEXT)
     * USBInjectAll (required when installing macOS)
   
@@ -53,8 +55,8 @@ The drivers, kexts, and SSDTs I used are as follows:
 Follow the OpenCore Install Guide to [setup the config.plist](https://dortania.github.io/OpenCore-Install-Guide/config.plist/) and [configure for Intel Kaby Lake Desktop](https://dortania.github.io/OpenCore-Install-Guide/config.plist/kaby-lake.html#starting-point).
 
 > Note: If you have an unsupported GPU, you must patch the iGPU in order to have signal when booting into macOS, and make sure that you have to disable the unsupported GPU by SSDT or -wegnoegpu boot-args
-> - About the iGPU patching, if you have issue when booting into macOS Installer like black screen, no signal after verbose, make sure you add the `igfxonln=1` in the boot-args and REMEMBER, macOS DOESN'T SUPPORT VGA PORT!
-> - If you have no HDMI audio, please find the `layout-id` that fits your build. [AppleALC Supported Codecs](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs).
+> - About the iGPU patching, if you have issue when booting into macOS Installer like black screen, no monitor signal after verbose, make sure you add the `igfxonln=1` in the boot-args and REMEMBER, macOS DOESN'T SUPPORT VGA PORT!
+> - If you have no HDMI audio, please find the `layout-id` that fits your build. Where to find my `layout-id`? [AppleALC Supported Codecs](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs).
 
 
 | SMBIOS     | Description   |
@@ -62,7 +64,7 @@ Follow the OpenCore Install Guide to [setup the config.plist](https://dortania.g
 | `iMac18,1` | Used for computers utilizing the iGPU for displaying |
 | `iMac18,3` | Used for computers using a dGPU for displaying, and an iGPU for computing tasks only |
 
-Make sure you choose the right SMBIOS for your build, otherwise it can't be booting up with signal!
+Make sure you choose the right SMBIOS for your build, otherwise it can't be booting up with monitor signal!
 
 ## BIOS Setting (version P8.00)
 - Disable
