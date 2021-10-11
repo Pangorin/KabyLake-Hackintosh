@@ -65,4 +65,5 @@ Follow the OpenCore Install Guide to [setup the config.plist](https://dortania.g
   * XHCI Hand-off
   * OS type: Windows 8.1/10 UEFI Mode
   * SATA Mode: AHCI
+
 (We can leave any setting that we cannot found)
