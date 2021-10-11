@@ -4,6 +4,8 @@ This is a guide for anyone want to install macOS on non-Apple hardware. This gui
 
 - [EFI](https://github.com/Pangorin/EFI-Hackintosh/tree/main/EFI): Copy this into the USB boot drive
 
+![Image spec])
+
 ## About my build
   - CPU: Intel Core i3-7100
   - Mainboard: ASRock H110M-DVS R2.0
