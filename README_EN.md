@@ -23,12 +23,12 @@ As noted above, if you want to use my EFI, you just care about the mainboard and
 
 How to make the USB boot drive:
   - Windows: [click here](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html)
-  - macOS: [click here](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html) (this guide is mainly using for hackintosh the Mac which can't run the new macOS. Though, you can still using this method to make a boot drive for desktop build)
+  - macOS: [click here](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html) (this guide is mainly using for hackintosh the Mac which can't run the new macOS. Though, you can still using this method to make a boot drive for desktops and laptops build)
   - Linux: [click here](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
 
 Prepare the base OpenCore system: [click here](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/opencore-efi.html).
 
-Necessary files to boot: [click here](https://dortania.github.io/OpenCore-Install-Guide/ktext.html).
+Necessary files: [click here](https://dortania.github.io/OpenCore-Install-Guide/ktext.html).
 
 The drivers, kexts, and SSDTs I used are as follows:
   - Driver:
